@@ -1,19 +1,13 @@
-# revision 18292
-# category Package
-# catalog-ctan /macros/latex/contrib/rotfloat
-# catalog-date 2009-10-07 22:25:55 +0200
-# catalog-license lppl
-# catalog-version 1.2
 Name:		texlive-rotfloat
-Version:	1.2
-Release:	11
+Version:	18292
+Release:	1
 Summary:	Rotate floats
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rotfloat
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -30,12 +24,12 @@ packages and extends the commands from the float package to
 define rotated versions of the new floats, too.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -48,24 +42,11 @@ define rotated versions of the new floats, too.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.2-2
-+ Revision: 755725
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.2-1
-+ Revision: 719463
-- texlive-rotfloat
-- texlive-rotfloat
-- texlive-rotfloat
-- texlive-rotfloat
-
