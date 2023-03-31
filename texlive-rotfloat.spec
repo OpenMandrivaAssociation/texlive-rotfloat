@@ -1,6 +1,6 @@
 Name:		texlive-rotfloat
 Version:	18292
-Release:	1
+Release:	2
 Summary:	Rotate floats
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rotfloat
