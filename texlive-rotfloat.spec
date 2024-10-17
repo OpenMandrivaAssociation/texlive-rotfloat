@@ -3,7 +3,7 @@ Version:	18292
 Release:	2
 Summary:	Rotate floats
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rotfloat
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/rotfloat
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rotfloat.doc.r%{version}.tar.xz
